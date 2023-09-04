@@ -34,7 +34,7 @@ public class MemberController {
 	@RequestMapping(value="/")
 	public String home() {
 		
-		return "login";
+		return "codeTest";
 		
 		
 	}
