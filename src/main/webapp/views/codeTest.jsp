@@ -315,27 +315,40 @@ class Solution {
 	 			<td>정답</td>
 	 		</tr>
 	 		<tr>
-	 			<th >두수의 곱</th>
+	 			<th >분수의 덧셈</th>
 	 			<td>
                     <pre>
                         <code>
+분수의 덧셈
 문제 설명
-정수 num1, num2가 매개변수 주어집니다. num1과 num2를 곱한 값을 return 하도록 solution 함수를 완성해주세요.
+첫 번째 분수의 분자와 분모를 뜻하는 numer1, denom1, 두 번째 분수의 분자와 분모를 뜻하는 
+numer2, denom2가 매개변수로 주어집니다. 두 분수를 더한 값을 기약 분수로 나타냈을 때 
+분자와 분모를 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.
 
 제한사항
-0 ≤ num1 ≤ 100
-0 ≤ num2 ≤ 100
-
+0 <numer1, denom1, numer2, denom2 < 1,000
 입출력 예
-num1	num2	result
-10	5	2
-7	2	3
-                        
+numer1	denom1	numer2	denom2	result
+1	2	3	4	[5, 4]
+9	2	1	3	[29, 6]
+입출력 예 설명
+입출력 예 #1
+
+1 / 2 + 3 / 4 = 5 / 4입니다. 따라서 [5, 4]를 return 합니다.
+입출력 예 #2
+
+9 / 2 + 1 / 3 = 29 / 6입니다. 따라서 [29, 6]을 return 합니다.
+
+문제
 class Solution {
-    public int solution(int num1, int num2) {
-        int answer = 0;
+    public int[] solution(int numer1, int denom1, int numer2, int denom2) {
+        int[] answer = {};
         return answer;
     }
+}
+
+
+
                         </code>
                     </pre>
                 </td>
@@ -343,14 +356,47 @@ class Solution {
                     <pre>
                         <code>
 class Solution {
-    public int solution(int num1, int num2) {
-        int answer = 0;
-        answer = num1 % num2;
+    public int[] solution(int numer1, int denom1, int numer2, int denom2) {
+        int[] answer = {};
+        int denom = denom1*denom2;
+        int numer = numer1*denom2+numer2*denom1;
+        
+        //나중에 맥스라는걸 쓸거니까 max 라는 애를 선언해 주는건가? 왜 여기서 선언해주는거지?
+        
+        int max = 1;
+        
+        for (int i = 1; i<=numer && i<=denom; i++){
+          if(denom%i == 0 && numer%i ==0){
+             max = i; 
+          }  
+        };
+        numer = numer/max;
+        denom = denom/max;
+
+
+        
+        answer = new int[2];
+        answer[0] = numer;
+        answer[1] = denom;
+        
+        
+        System.out.println(denom);
+        System.out.println(numer);
+        
+                //위에서 지정해주지 않고 int[] answer = {numer, denom}; 이렇게 해줘도 상관없다.
+        
         return answer;
     }
+}
                         </code>
                     </pre>
-                    나머지를 구하려면 %, 몫을 구하려면 / 를 사용하면 된다.
+                    키포인트 : 최소공배수를 구하는것이 관건
+                    <br>
+                    1. 분모와 분자를 정해준다.
+                    <br>
+                    2. for문을 통해 나머지가 0이 되는것중에 최대를 구한다.
+                    <br>
+                    3. 분모가 클지 분모가 클지 모르기 때문에 조건을 추가해준다.
                     
                 </td>
 	 		</tr>
@@ -403,6 +449,9 @@ class Solution {
 	 			<td></td>
 	 		</tr>
 		</table>
+		
+		
+		
 		
 		
  	</form>
