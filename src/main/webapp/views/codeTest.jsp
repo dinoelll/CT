@@ -450,7 +450,170 @@ class Solution {
 	 		</tr>
 		</table>
 		
-		
+		<h1 id="toggle97">9/7</h1>
+    <table id="table97">
+	 		<tr style="height: 10%">
+	 			<th>유형</th>
+	 			<td>문제</td>
+	 			<td>정답</td>
+	 		</tr>
+	 		<tr>
+	 			<th >직사각형 별찍기</th>
+	 			<td>
+                    <pre>
+                        <code>
+문제 설명
+이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다.
+별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요.
+
+제한 조건
+n과 m은 각각 1000 이하인 자연수입니다.
+예시
+입력
+
+5 3
+출력
+
+*****
+*****
+*****
+                        
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        return answer;
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+	 			<td>
+                    <pre>
+                        <code>
+import java.util.Scanner;
+
+class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        
+        StringBuilder sb = new StringBuilder();
+        
+        
+        for(int i = 0; i < a; i++){
+            sb.append('*');
+            
+        }
+        String star = new String();
+        
+        for(int i = 0; i < b; i++){
+            
+            System.out.println(sb);
+            
+        }
+ 
+    }
+}
+                        </code>
+                        </pre>
+                        
+                        <pre>
+                        <code>
+다른예시
+
+import java.util.Scanner;
+
+class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        
+        final StringBuilder sb = new StringBuilder();
+        
+        for(int i = 0; i < a; i++) {
+            sb.append("*");
+        }
+        
+        String star = sb.toString();
+
+        for(int i = 0; i < b; i++) {
+            System.out.println(star);    
+        }
+        
+    }
+}
+두 코드 모두 비슷한 기능을 수행하지만, 두 번째 코드가 약간 더 효율적이고 가독성이 높은 코드입니다. 
+두 번째 코드에서는 몇 가지 개선 사항이 있습니다:
+final 키워드: 두 번째 코드에서 sb 변수를 final StringBuilder로 선언했습니다.
+ 이렇게 하면 sb 변수를 재할당할 수 없으므로 코드의 안정성을 높일 수 있습니다.
+
+sb.toString(): 두 번째 코드에서는 StringBuilder의 내용을 문자열로 변환할 때 sb.toString() 메서드를 사용했습니다. 
+이렇게 하면 StringBuilder의 내용을 불필요하게 복제하지 않고도 문자열로 변환할 수 있으며, 문자열을 더 이상 변경하지 않을 때에도
+ star 변수를 사용하여 문자열을 재사용할 수 있습니다.
+
+가독성: 두 번째 코드는 변수명을 좀 더 의미있게 사용하고, 코드의 구조가 명확하게 나타나므로 가독성이 높습니다.
+
+코드를 작성하는 스타일과 선호도는 개발자마다 다를 수 있으며, 
+두 코드 모두 동작은 하지만 두 번째 코드가 일반적으로 더 권장되는 스타일과 더 효율적으로 작성되었다고 할 수 있습니다.
+                     </code>
+                        </pre>
+                    해결방법 : for문을 이용해서 문자열을 뽑아내준다.
+                   
+                    
+                    
+                </td>
+	 		</tr>
+	 		
+	 		
+	 		<tr>
+	 			<th>몫 구하기</th>
+	 			<td>
+                    <pre>
+                        <code>
+문제 설명
+정수 num1, num2가 매개변수로 주어질 때, num1을 num2로 나눈 몫을 return 하도록 solution 함수를 완성해주세요.
+
+제한사항
+0 ≤ num1 ≤ 100
+0 ≤ num2 ≤ 100
+
+입출력 예
+num1	num2	result
+3	4	12
+27	19	513
+
+
+                        
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        return answer;
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+	 			<td>
+                    <pre>
+                        <code>
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        answer = num1 / num2;
+        return answer;
+    }
+                        </code>
+                    </pre>
+                </td>
+	 		</tr>
+	 		<tr>
+	 			<th></th>
+	 			<td></td>
+	 			<td></td>
+	 		</tr>
+		</table>
 		
 		
 		
@@ -472,6 +635,11 @@ $(document).ready(function() {
     $("#toggle96").click(function() {
         $("#table96").toggle();
     });
+    
+    $("#toggle97").click(function() {
+        $("#table97").toggle();
+    });
+    
 });
 </script>
 </body>
