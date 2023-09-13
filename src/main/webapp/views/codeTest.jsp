@@ -912,6 +912,139 @@ class Solution {
 		</table>
 		
 		
+		<h1 id="toggle913">9/13</h1>
+    <table id="table913">
+	 		<tr style="height: 10%">
+	 			<th>유형</th>
+	 			<td>문제</td>
+	 			<td>정답</td>
+	 		</tr>
+	 		<tr>
+	 			<th >중앙값 구하기</th>
+	 			<td>
+                    <pre>
+                        <code>
+중앙값 구하기
+문제 설명
+중앙값은 어떤 주어진 값들을 크기의 순서대로 정렬했을 때 가장 중앙에 위치하는 값을 의미합니다.
+ 예를 들어 1, 2, 7, 10, 11의 중앙값은 7입니다. 
+ 정수 배열 array가 매개변수로 주어질 때, 중앙값을 return 하도록 solution 함수를 완성해보세요.
+
+제한사항
+array의 길이는 홀수입니다.
+0 < array의 길이 < 100
+-1,000 < array의 원소 < 1,000
+입출력 예
+array	result
+[1, 2, 7, 10, 11]	7
+[9, -1, 0]	0
+입출력 예 설명
+입출력 예 #1
+
+본문과 동일합니다.
+입출력 예 #2
+
+9, -1, 0을 오름차순 정렬하면 -1, 0, 9이고 가장 중앙에 위치하는 값은 0입니다.
+
+
+class Solution {
+    public int solution(int[] array) {
+        int answer = 0;
+        return answer;
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+	 			<td>
+                    <pre>
+                        <code>
+                        
+import java.util.Arrays;
+class Solution {
+    public int solution(int[] array) {
+        int answer = 0;
+        
+        Arrays.sort(array);
+        answer = array[array.length/2];
+        
+        System.out.println(answer);
+        return answer;
+    }
+}
+
+                        </code>
+                        </pre>
+                        
+                       해설
+                       <br>
+                    1. 오름차순으로 정렬하기 위해서 Arrays를 임포트 해줍니다.
+                    <br>
+                    2. sort 메서드로 정렬해줍니다.
+                    <br>
+                    3. 중앙값을 찾기위해 배열을 반으로 나눕니다.
+                    <br>
+                    <br>
+                    
+                    소감 : 일단 import를 직접해주는게 뭔가 신기했음. 중앙값을 구하는데 
+                    <br>
+                    왜 반으로 나누는지 아직 이해 안됨.
+                   
+                    
+                    
+                </td>
+	 		</tr>
+	 		
+	 		
+	 		<tr>
+	 			<th>몫 구하기</th>
+	 			<td>
+                    <pre>
+                        <code>
+문제 설명
+정수 num1, num2가 매개변수로 주어질 때, num1을 num2로 나눈 몫을 return 하도록 solution 함수를 완성해주세요.
+
+제한사항
+0 ≤ num1 ≤ 100
+0 ≤ num2 ≤ 100
+
+입출력 예
+num1	num2	result
+3	4	12
+27	19	513
+
+
+                        
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        return answer;
+    }
+}
+                        </code>
+                    </pre>
+                </td>
+	 			<td>
+                    <pre>
+                        <code>
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        answer = num1 / num2;
+        return answer;
+    }
+                        </code>
+                    </pre>
+                </td>
+	 		</tr>
+	 		<tr>
+	 			<th></th>
+	 			<td></td>
+	 			<td></td>
+	 		</tr>
+		</table>
+		
+		
 		
  	</form>
 	
@@ -938,6 +1071,10 @@ $(document).ready(function() {
     
     $("#toggle911").click(function() {
         $("#table911").toggle();
+    });
+    
+    $("#toggle913").click(function() {
+        $("#table913").toggle();
     });
     
 });
